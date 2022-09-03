@@ -63,6 +63,7 @@ Use the higher-order function getWinners to do the following:
 function getWinners(arr, cb) {
     return cb(arr).map(n => n[`Home Team Goals`] > n[`Away Team Goals`] ? n['Home Team Name'] : n['Away Team Name']);
 }
+console.log(getWinners(fifaData, getFinals));
 
 
 
@@ -77,8 +78,10 @@ Use the higher-order function getWinnersByYear to do the following:
 💡 HINT: the strings returned need to exactly match the string in step 4.
  */
 
-function getWinnersByYear(/* code here */) {
-    /* code here */
+function getWinnersByYear(arr, finalCB, yearsCB, winnerCB) {
+    const winners = winnerCB(arr, finalCB,);
+    const years = yearsCB(arr, finalCB);
+    return winners.map((n, i) => `In ${years[i]}, ${n} won the world cup!` );
 }
 
 
